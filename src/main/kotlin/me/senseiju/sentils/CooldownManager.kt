@@ -27,11 +27,7 @@ open class CooldownManager<K>(private val cooldown: Long) {
      * @return true if on cooldown
      */
     fun isOnCooldown(key: K): Boolean {
-        if (!cooldowns.containsKey(key)) {
-            return false
-        }
-
-        return System.currentTimeMillis() - cooldowns[key]!! <= cooldown
+        return System.currentTimeMillis() - (cooldowns[key] ?: return false) <= cooldown
     }
 
     /**

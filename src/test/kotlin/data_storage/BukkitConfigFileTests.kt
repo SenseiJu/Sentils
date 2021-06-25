@@ -2,7 +2,7 @@ package data_storage
 
 import be.seeseemelk.mockbukkit.MockBukkit
 import be.seeseemelk.mockbukkit.MockPlugin
-import me.senseiju.sentils.data_storage.BukkitConfigFile
+import me.senseiju.sentils.storage.BukkitConfigFile
 import org.bukkit.Location
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions

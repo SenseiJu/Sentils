@@ -1,4 +1,4 @@
-package me.senseiju.sentils.data_storage
+package me.senseiju.sentils.storage
 
 import me.senseiju.sentils.extensions.asString
 import me.senseiju.sentils.extensions.locationFromString
