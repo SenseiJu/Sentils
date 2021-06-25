@@ -17,5 +17,5 @@ abstract class PlayerCountdownRunnable : CountdownRunnable() {
      *
      * @return [Bukkit.getPlayer]
      */
-    fun getPlayer(): Player? = Bukkit.getPlayer(uuid)
+    fun getPlayer() = Bukkit.getPlayer(uuid)
 }
