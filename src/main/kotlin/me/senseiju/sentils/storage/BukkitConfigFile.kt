@@ -43,16 +43,12 @@ class BukkitConfigFile(
      */
     fun save() = config.save(file)
 
-    fun set(path: String, value: Any) {
-        config.set(path, value)
-    }
+    fun set(path: String, value: Any) { config.set(path, value) }
 
     /**
      * General getter for config
      */
-    fun get(path: String, default: Any?): Any? {
-        return config.get(path, default)
-    }
+    fun get(path: String, default: Any?) = config.get(path, default)
 
     fun getString(path: String, default: String) = config.getString(path, default)!!
 
@@ -84,13 +80,5 @@ class BukkitConfigFile(
     /**
      * Gets the [Location] from the path. Must be in the format returned by [Location.asString]
      */
-    fun getLocation(path: String): Location? {
-        return with (config.getString(path)) {
-            if (this == null) {
-                null
-            } else {
-                locationFromString(this)
-            }
-        }
-    }
+    fun getLocation(path: String) = config.getString(path)?.let { locationFromString(it) }
 }
