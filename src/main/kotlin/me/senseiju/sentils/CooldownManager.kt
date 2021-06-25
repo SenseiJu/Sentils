@@ -26,9 +26,7 @@ open class CooldownManager<K>(private val cooldown: Long) {
      *
      * @return true if on cooldown
      */
-    fun isOnCooldown(key: K): Boolean {
-        return System.currentTimeMillis() - (cooldowns[key] ?: return false) <= cooldown
-    }
+    fun isOnCooldown(key: K) = cooldowns[key]?.let { System.currentTimeMillis() - it <= cooldown } == true
 
     /**
      * Get the time remaining for a key
@@ -37,7 +35,5 @@ open class CooldownManager<K>(private val cooldown: Long) {
      *
      * @return the time remaining in seconds
      */
-    fun timeRemaining(key: K): Long {
-        return (cooldown - (System.currentTimeMillis() - cooldowns.getOrDefault(key, 0))) / 1000
-    }
+    fun timeRemaining(key: K) = (cooldown - (System.currentTimeMillis() - (cooldowns[key] ?: 0))) / 1000
 }
