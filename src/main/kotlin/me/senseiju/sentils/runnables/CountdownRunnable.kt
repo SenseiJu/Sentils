@@ -26,6 +26,8 @@ abstract class CountdownRunnable : BukkitRunnable() {
         }
 
         timeToComplete--
+
+        executeEverySecond()
     }
 
     /**
@@ -41,4 +43,9 @@ abstract class CountdownRunnable : BukkitRunnable() {
      * Executes once the countdown is finished
      */
     abstract fun onComplete()
+
+    /**
+     * Executes every second
+     */
+    open fun executeEverySecond() {}
 }
