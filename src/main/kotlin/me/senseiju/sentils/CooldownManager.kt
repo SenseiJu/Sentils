@@ -1,6 +1,5 @@
 package me.senseiju.sentils
 
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**

@@ -5,7 +5,6 @@ import org.bukkit.Sound
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.PlayerInventory
-import kotlin.IllegalArgumentException
 
 /**
  * Quicker way to play a sound to a player. Automatically sets the location to their current position

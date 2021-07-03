@@ -1,7 +1,7 @@
 package me.senseiju.sentils.extensions.events
 
-import org.bukkit.entity.Player
 import org.bukkit.entity.HumanEntity
+import org.bukkit.entity.Player
 import org.bukkit.event.inventory.InventoryClickEvent
 
 /**
