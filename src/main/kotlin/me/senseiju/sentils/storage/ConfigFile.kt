@@ -70,6 +70,8 @@ class ConfigFile(
 
     fun getBooleanList(path: String): MutableList<Boolean> = config.getBooleanList(path)
 
+    fun getConfigurationSection(path: String) = config.getConfigurationSection(path)
+
     /**
      * Sets the value of the path to a [Location] in the format [Location.asString]
      */
