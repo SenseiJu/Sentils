@@ -7,7 +7,7 @@ import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
 
-class BukkitConfigFile(
+class ConfigFile(
     private val plugin: JavaPlugin,
     private val path: String,
     private val hasDefault: Boolean = false

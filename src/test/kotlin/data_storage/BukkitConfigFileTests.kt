@@ -2,7 +2,7 @@ package data_storage
 
 import be.seeseemelk.mockbukkit.MockBukkit
 import be.seeseemelk.mockbukkit.MockPlugin
-import me.senseiju.sentils.storage.BukkitConfigFile
+import me.senseiju.sentils.storage.ConfigFile
 import org.bukkit.Location
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions
@@ -31,7 +31,7 @@ class BukkitConfigFileTests {
 
     @Test
     fun testConfigFile() {
-        val file = BukkitConfigFile(plugin, "test.yml", true)
+        val file = ConfigFile(plugin, "test.yml", true)
         val location = Location(null, 1.0, 1.2, -5.0, 34F, 350F)
 
         file.setLocation("location", location)
