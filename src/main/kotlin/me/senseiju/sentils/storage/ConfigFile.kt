@@ -13,7 +13,9 @@ class ConfigFile(
     private val hasDefault: Boolean = false
 ) {
     private lateinit var file: File
-    private lateinit var config: YamlConfiguration
+
+    lateinit var config: YamlConfiguration
+        private set
 
     init {
         reload()
@@ -81,6 +83,8 @@ class ConfigFile(
     fun getBooleanList(path: String): MutableList<Boolean> = config.getBooleanList(path)
 
     fun getConfigurationSection(path: String) = config.getConfigurationSection(path)
+
+    fun getKeys(deep: Boolean): Set<String> = config.getKeys(deep)
 
     /**
      * Gets the [Location] from the path. Must be in the format returned by [Location.asString]
