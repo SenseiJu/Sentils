@@ -43,10 +43,20 @@ class ConfigFile(
      */
     fun save() = config.save(file)
 
+    /**
+     * Setters
+     */
     fun set(path: String, value: Any) { config.set(path, value) }
 
     /**
-     * General getter for config
+     * Sets the value of the path to a [Location] in the format [Location.asString]
+     */
+    fun setLocation(path: String, location: Location) {
+        set(path, location.asString())
+    }
+
+    /**
+     * Getters
      */
     fun get(path: String, default: Any?) = config.get(path, default)
 
@@ -73,14 +83,22 @@ class ConfigFile(
     fun getConfigurationSection(path: String) = config.getConfigurationSection(path)
 
     /**
-     * Sets the value of the path to a [Location] in the format [Location.asString]
-     */
-    fun setLocation(path: String, location: Location) {
-        set(path, location.asString())
-    }
-
-    /**
      * Gets the [Location] from the path. Must be in the format returned by [Location.asString]
      */
     fun getLocation(path: String) = config.getString(path)?.let { locationFromString(it) }
+
+    /**
+     * Check if path is a type
+     */
+    fun isString(path: String) = config.isString(path)
+
+    fun isInt(path: String) = config.isInt(path)
+
+    fun isLong(path: String) = config.isLong(path)
+
+    fun isBoolean(path: String) = config.isBoolean(path)
+
+    fun isConfigurationSection(path: String) = config.isConfigurationSection(path)
+
+    fun isLocation(path: String) = getLocation(path)?.let { true } ?: false
 }
