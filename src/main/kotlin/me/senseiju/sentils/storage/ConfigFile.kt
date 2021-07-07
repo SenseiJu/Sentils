@@ -45,9 +45,6 @@ class ConfigFile(
      */
     fun save() = config.save(file)
 
-    /**
-     * Setters
-     */
     fun set(path: String, value: Any) { config.set(path, value) }
 
     /**
@@ -57,9 +54,6 @@ class ConfigFile(
         set(path, location.asString())
     }
 
-    /**
-     * Getters
-     */
     fun get(path: String, default: Any?) = config.get(path, default)
 
     fun getString(path: String, default: String) = config.getString(path, default)!!
@@ -91,9 +85,8 @@ class ConfigFile(
      */
     fun getLocation(path: String) = config.getString(path)?.let { locationFromString(it) }
 
-    /**
-     * Check if path is a type
-     */
+    fun isSet(path: String) = config.isSet(path)
+
     fun isString(path: String) = config.isString(path)
 
     fun isInt(path: String) = config.isInt(path)
