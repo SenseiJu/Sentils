@@ -20,3 +20,20 @@ fun getOnlinePlayer(uuid: UUID): Player? {
         }
     }
 }
+
+/**
+ * Gets a [Player] by their exact username if they are online
+ *
+ * @param name the exact username
+ *
+ * @return [Player] if online else null
+ */
+fun getOnlinePlayer(name: String): Player? {
+    return Bukkit.getPlayerExact(name)?.let {
+        return if (it.isOnline) {
+            it
+        } else {
+            null
+        }
+    }
+}
