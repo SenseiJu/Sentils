@@ -1,8 +1,6 @@
 plugins {
-    val kotlinVersion = "1.5.20"
-
-    kotlin("jvm") version kotlinVersion
-    kotlin("plugin.serialization") version kotlinVersion
+    kotlin("jvm") version "+"
+    kotlin("plugin.serialization") version "+"
     `java-library`
     `maven-publish`
 }
@@ -19,9 +17,8 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
-    compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:+")
+    compileOnly("org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT")
 
     testImplementation("com.github.seeseemelk:MockBukkit-v1.16:1.0.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
