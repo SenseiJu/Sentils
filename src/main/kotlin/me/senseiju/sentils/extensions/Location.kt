@@ -25,3 +25,16 @@ fun locationFromString(string: String): Location {
         )
     }
 }
+
+fun String.parseLocation(): Location {
+    with (this.split(":")) {
+        return Location(
+            Bukkit.getWorld(this[0]),
+            this[1].toDouble(),
+            this[2].toDouble(),
+            this[3].toDouble(),
+            this[4].toFloat(),
+            this[5].toFloat()
+        )
+    }
+}
