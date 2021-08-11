@@ -3,10 +3,8 @@ package me.senseiju.sentils.service
 class ServiceProvider {
     val services = hashSetOf<Service>()
 
-    fun add(vararg servicesToAdd: Service) {
-        servicesToAdd.forEach {
-            services.add(it)
-        }
+    fun add(service: Service) {
+        services.add(service)
     }
 
     inline fun <reified T : Service> get(): T {
