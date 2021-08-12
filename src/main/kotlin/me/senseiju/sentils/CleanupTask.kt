@@ -1,5 +1,6 @@
 package me.senseiju.sentils
 
+import java.util.concurrent.TimeUnit
 import kotlin.concurrent.thread
 
 /**
@@ -10,7 +11,7 @@ import kotlin.concurrent.thread
  *                  will not run, useful for optional cleanups
  */
 abstract class CleanupTask(
-    private val period: Long = -1
+    private val period: Long = TimeUnit.MINUTES.toMillis(5)
 ) {
     init {
         if (period >= 0) {
