@@ -17,7 +17,10 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:+")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:+")
+    implementation("com.zaxxer:HikariCP:5.0.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
     compileOnly("org.spigotmc:spigot-api:1.17-R0.1-SNAPSHOT")
 
     testImplementation("com.github.seeseemelk:MockBukkit-v1.16:1.0.0")
