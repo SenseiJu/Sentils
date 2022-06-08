@@ -54,11 +54,11 @@ private fun applyPlaceholdersAndPrefix(line: String, prefix: Boolean, vararg pla
     var toSend = line
 
     placeholders.forEach { placeholder ->
-        toSend = line.replace(placeholder.any1.toString(), placeholder.any2.toString())
+        toSend = toSend.replace(placeholder.any1.toString(), placeholder.any2.toString())
     }
 
     if (prefix) {
-        toSend = "${MessageProvider.messages.getString("PREFIX", "&c&lNO PREFIX SET »")} $line"
+        toSend = "${MessageProvider.messages.getString("PREFIX", "&c&lNO PREFIX SET »")} $toSend"
     }
 
     return toSend
